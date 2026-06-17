@@ -74,7 +74,9 @@ php artisan serve
 | `GET` | `/api/projects` | Listar proyectos publicados |
 | `GET` | `/api/projects/{id}` | Detalle de un proyecto |
 
-### Privados (requieren `Authorization: ******
+### Privados (requieren cabecera de autenticación)
+
+> Enviar el token en la cabecera HTTP: `Authorization: ******`
 
 | Método | Endpoint | Descripción |
 |---|---|---|
