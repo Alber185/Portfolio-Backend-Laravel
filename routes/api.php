@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,4 +35,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/projects', [ProjectController::class, 'store']);
     Route::put('/projects/{project}', [ProjectController::class, 'update']);
     Route::delete('/projects/{project}', [ProjectController::class, 'destroy']);
+});
+
+// Protected contact management endpoints
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/contacts', [ContactController::class, 'get']);
+    Route::put('/contacts', [ContactController::class, 'update']);
 });
